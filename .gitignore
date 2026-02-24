@@ -1,0 +1,8 @@
+# osTicket runtime files
+upload/include/ost-config.php
+upload/attachments/
+upload/logs/
+
+# Docker
+*.log
+.env

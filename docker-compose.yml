@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  osticket:
+    build: .
+    container_name: osticket_app
+    ports:
+      - "${OSTICKET_PORT:-8085}:80"
+    environment:
+      PHP_MEMORY_LIMIT: 512M
+    volumes:
+      - osticket_config:/var/www/html/include
+      - osticket_attachments:/var/www/html/upload
+    restart: unless-stopped
+
+volumes:
+  osticket_config:
+  osticket_attachments:
